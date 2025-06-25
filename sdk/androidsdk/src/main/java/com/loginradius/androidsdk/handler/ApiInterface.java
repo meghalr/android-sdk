@@ -16,41 +16,32 @@ import com.loginradius.androidsdk.response.DeviceRegisterResponse;
 import com.loginradius.androidsdk.response.PostResponse;
 import com.loginradius.androidsdk.response.UpdateProfileResponse;
 import com.loginradius.androidsdk.response.securityquestions.SecurityQuestionsResponse;
-import com.loginradius.androidsdk.response.LoginRadiusContactCursorResponse;
 import com.loginradius.androidsdk.response.PostAPIResponse;
 import com.loginradius.androidsdk.response.UpdateResponse;
 import com.loginradius.androidsdk.response.VerifyResponse;
 import com.loginradius.androidsdk.response.VerifyEmailResponse;
-import com.loginradius.androidsdk.response.album.LoginRadiusAlbum;
-import com.loginradius.androidsdk.response.audio.LoginRadiusAudio;
-import com.loginradius.androidsdk.response.checkin.LoginRadiusCheckIn;
-import com.loginradius.androidsdk.response.company.LoginRadiusCompany;
+
 import com.loginradius.androidsdk.response.config.ConfigResponse;
 import com.loginradius.androidsdk.response.customobject.CreateCustomObject;
 import com.loginradius.androidsdk.response.customobject.ReadCustomObject;
-import com.loginradius.androidsdk.response.event.LoginRadiusEvent;
-import com.loginradius.androidsdk.response.following.LoginRadiusFollowing;
-import com.loginradius.androidsdk.response.group.LoginRadiusGroup;
-import com.loginradius.androidsdk.response.like.LoginRadiusLike;
+
 import com.loginradius.androidsdk.response.login.LoginData;
-import com.loginradius.androidsdk.response.mention.LoginRadiusMention;
-import com.loginradius.androidsdk.response.page.LoginRadiusPage;
+
 import com.loginradius.androidsdk.response.password.ForgotPasswordResponse;
 import com.loginradius.androidsdk.response.phone.PhoneDataResponse;
 import com.loginradius.androidsdk.response.phone.PhoneForgotPasswordResponse;
 import com.loginradius.androidsdk.response.phone.PhoneResponse;
 import com.loginradius.androidsdk.response.phonesendotp.PhoneSendOtpData;
-import com.loginradius.androidsdk.response.photo.LoginRadiusPhoto;
-import com.loginradius.androidsdk.response.post.LoginRadiusPost;
+
 import com.loginradius.androidsdk.response.register.DeleteResponse;
 import com.loginradius.androidsdk.response.register.RegisterResponse;
 import com.loginradius.androidsdk.response.register.RegistrationData;
 import com.loginradius.androidsdk.response.securityquestions.UpdateSecurityQuestionsResponse;
 import com.loginradius.androidsdk.response.socialinterface.SocialInterface;
-import com.loginradius.androidsdk.response.status.LoginRadiusStatus;
+
 import com.loginradius.androidsdk.response.traditionalinterface.UserRegistration;
 import com.loginradius.androidsdk.response.userprofile.LoginRadiusUltimateUserProfile;
-import com.loginradius.androidsdk.response.video.LoginRadiusVideo;
+
 
 import java.util.List;
 import java.util.Map;
@@ -81,65 +72,6 @@ public interface ApiInterface {
 
 
 
-
-    @GET
-    Observable<LoginRadiusAlbum[]> getAlbum(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusAudio[]> getAudio(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusCheckIn[]> getCheckin(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusCompany[]> getCompany(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusContactCursorResponse> getContact(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusEvent[]> getEvent(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusFollowing[]> getFollowing(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusGroup[]> getGroup(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusLike[]> getLike(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusMention[]> getMention(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusPhoto[]> getPhoto(@Url String url, @QueryMap Map<String, String> options);
-
-
-    @GET
-    Observable<LoginRadiusPost[]> getPost(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusStatus[]> getStatus(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusVideo[]> getVideo(@Url String url, @Query("access_token") String access_token);
-
-
-    @GET
-    Observable<LoginRadiusPage> getPage(@Url String url, @QueryMap Map<String, String> options);
 
 
     @GET
@@ -268,8 +200,7 @@ public interface ApiInterface {
     @POST
     Observable<PostAPIResponse> getMessage(@Url String url, @QueryMap Map<String, String> options);
 
-    @POST
-    Observable<PostAPIResponse> getStatusUpdate(@Url String url, @QueryMap Map<String, String> options);
+
 
     @POST
     Observable<RegisterResponse> getTraditionalRegister(@Url String url, @HeaderMap Map<String, String> headers, @QueryMap Map<String, String> options, @Body RegistrationData data);
