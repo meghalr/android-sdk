@@ -4,7 +4,24 @@
 Released on ** June 25, 2025**
 
 ##### Enhancements
-Removed deprecated Social APIs to improve system stability and maintain up-to-date integrations.
+Removed (Deprecated) APIs:
+* Get Status
+* Get Contacts
+* Get Album
+* Get Audio
+* Get CheckIn
+* Get Company
+* Get Events
+* Get Following
+* Get Groups
+* Get Likes
+* Get Mention
+* Get Photo
+* Get Page
+* Get Video
+* Post Message
+* Get Posts
+* Status Update
 
 ### Version 5.2.1
 Released on ** April 09, 2025**
