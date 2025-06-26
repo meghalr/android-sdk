@@ -1,5 +1,11 @@
 > **LoginRadius Android SDK Change Log** provides information regarding what has changed, more specifically what changes, improvements and bug fix has been made to the SDK. For more details please refer to the [LoginRadius API Documention](https://www.loginradius.com/docs/api/v2/deployment/mobile-sdk-libraries/android-library/)
 
+### Version 5.2.2
+Released on ** June 25, 2025**
+
+##### Enhancements
+Removed deprecated Social APIs to improve system stability and maintain up-to-date integrations.
+
 ### Version 5.2.1
 Released on ** April 09, 2025**
 

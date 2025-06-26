@@ -27,22 +27,20 @@ import com.google.gson.internal.LinkedTreeMap;
 import com.loginradius.androidsdk.activity.WebViewActivity;
 import com.loginradius.androidsdk.api.AuthenticationAPI;
 import com.loginradius.androidsdk.api.ConfigurationAPI;
-import com.loginradius.androidsdk.api.SocialAPI;
 import com.loginradius.androidsdk.handler.AsyncHandler;
 import com.loginradius.androidsdk.helper.ErrorResponse;
 import com.loginradius.androidsdk.resource.Endpoint;
 import com.loginradius.androidsdk.resource.LoginUtil;
 import com.loginradius.androidsdk.resource.QueryParams;
 import com.loginradius.androidsdk.response.AccessTokenResponse;
-import com.loginradius.androidsdk.response.LoginRadiusContactCursorResponse;
 import com.loginradius.androidsdk.response.UpdateProfileResponse;
 import com.loginradius.androidsdk.response.config.ConfigResponse;
-import com.loginradius.androidsdk.response.contact.LoginRadiusContact;
+
 import com.loginradius.androidsdk.response.phone.PhoneResponse;
 import com.loginradius.androidsdk.response.register.DeleteResponse;
 import com.loginradius.androidsdk.response.register.RegisterResponse;
 import com.loginradius.androidsdk.response.socialinterface.Provider;
-import com.loginradius.androidsdk.response.status.LoginRadiusStatus;
+
 import com.loginradius.androidsdk.response.userprofile.LoginRadiusUltimateUserProfile;
 import com.loginradius.androidsdk.response.userprofile.identity.Identity;
 
@@ -375,62 +373,13 @@ public class ProfileActivity extends AppCompatActivity {
      * Some APIs are Provider-specific (such as StatusAPI). If the API is not available
      * for the provider, it will just return 'onFailure' with an errorcode.
      */
-    private void getStatus(AccessTokenResponse token) {
-        SocialAPI api = new SocialAPI();
-        QueryParams queryParams = new QueryParams();
-        queryParams.setAccess_token(token.access_token);
-        api.getStatus(queryParams, new AsyncHandler<LoginRadiusStatus[]>() {
-            @Override
-            public void onSuccess(LoginRadiusStatus[] data) {
-                if (data.length == 0 || data[0] == null) return;
-                for (int i = 0; i < data.length; i++){
-                    info.add("Status: " + data[i].text);
-                    info.add("Status Id: " + data[i].id);
-                }
-                adapter.notifyDataSetChanged();
-            }
-            @Override
-            public void onFailure(Throwable error, String errorcode) {
-                if (errorcode.equals("lr_API_NOT_SUPPORTED")) {
-                    info.add("StatusAPI is not supported by this provider.");
-                    adapter.notifyDataSetChanged();
-                }
-            }
-        });
 
-    }
 
     /**
      * Load ten contacts into list
      *
      * @param token
      */
-    private void getContacts(AccessTokenResponse token) {
-        SocialAPI api = new SocialAPI();
-        QueryParams queryParams = new QueryParams();
-        queryParams.setAccess_token(token.access_token);
-        api.getContact(queryParams, new AsyncHandler<LoginRadiusContactCursorResponse>() {
-            @Override
-            public void onSuccess(LoginRadiusContactCursorResponse data) {
-                int index = 0;
-                for (LoginRadiusContact c : data.Data) {
-                    if (index >= 10) break;
-                    info.add("Contact " + index + ": " + c.name);
-                    info.add("Email " + index + ": " + c.emailId);
-                    info.add("PhoneNumber " + index + ": " + c.phoneNumber);
-                    index++;
-                }
-                adapter.notifyDataSetChanged();
-            }
-            @Override
-            public void onFailure(Throwable error, String errorcode) {
-                if (errorcode.equals("lr_API_NOT_SUPPORTED")) {
-                    info.add("ContactAPI is not supported by this provider.");
-                    adapter.notifyDataSetChanged();
-                }
-            }
-        });
-    }
 
 
 

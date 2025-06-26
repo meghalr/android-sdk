@@ -12,40 +12,6 @@ import java.util.Map;
 
 public class QueryMapHelper {
 
-    public static Map<String, String> getMapStatusUpdate(QueryParams queryParams){
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("access_token", queryParams.getAccess_token());
-        params.put("title", queryParams.getTitle());
-        params.put("url", queryParams.getUrl());
-        params.put("imageurl", queryParams.getImageUrl());
-        params.put("status", queryParams.getStatus());
-        params.put("caption", queryParams.getCaption());
-        params.put("description", queryParams.getDescription());
-        return params;
-    }
-
-    public static Map<String, String> getMapMessage(QueryParams queryParams){
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("access_token", queryParams.getAccess_token());
-        params.put("to", queryParams.getReceiver());
-        params.put("subject", queryParams.getSubject());
-        params.put("message", queryParams.getMessage());
-        return params;
-    }
-
-    public static Map<String, String> getMapPage(QueryParams queryParams){
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("access_token", queryParams.getAccess_token());
-        params.put("pagename", queryParams.getPageName());
-        return params;
-    }
-
-    public static Map<String, String> getMapPhoto(QueryParams queryParams){
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("access_token", queryParams.getAccess_token());
-        params.put("albumId", queryParams.getAlbumId());
-        return params;
-    }
 
     public static Map<String,String> getMapAddEmail(QueryParams queryParams){
         Map<String, String> params = new HashMap<String, String>();
